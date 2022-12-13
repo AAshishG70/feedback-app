@@ -13,7 +13,7 @@ const Header = ({
   };
   return (
     <header style={headerStyles}>
-      <div className={styles.container}>{text} Header</div>
+      <div className={styles.container}>{text} Message</div>
     </header>
   );
 };
