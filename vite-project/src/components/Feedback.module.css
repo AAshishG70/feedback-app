@@ -1,1 +1,8 @@
 /* Write CSS for the Feedback */
+
+.close {
+  cursor: pointer;
+  /* position: absolute;
+  top: 12px;
+  right: 30px; */
+}

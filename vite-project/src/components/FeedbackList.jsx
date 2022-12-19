@@ -1,6 +1,6 @@
 import Feedback from "./Feedback";
 
-const FeedbackList = ({ feedback = [] }, { deleteFeedback }) => {
+const FeedbackList = ({ feedback }, { deleteFeedback }) => {
   // Validate feedback with PropTypes
   return (
     <div>
