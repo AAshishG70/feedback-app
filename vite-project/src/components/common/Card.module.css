@@ -1,3 +1,12 @@
 .card {
-  background-color: red;
+  background-color: aliceblue;
+  color: #333;
+  border-radius: 15px;
+  padding: 40px 50px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.card h2 {
+  font-size: 22px;
 }

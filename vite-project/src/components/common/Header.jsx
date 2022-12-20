@@ -4,16 +4,16 @@ import styles from "./Header.module.css";
 
 const Header = ({
   text = "Default",
-  textColor = "black",
-  bgColor = "brown",
+  textColor = "purple",
+  bgColor = "white",
 }) => {
   const headerStyles = {
-    backgroundColor: "lightblue",
-    border: "1.5px dashed gray",
+    backgroundColor: bgColor,
+    color: textColor,
   };
   return (
     <header style={headerStyles}>
-      <div className={styles.container}>{text} Message</div>
+      <div className="container">{text}</div>
     </header>
   );
 };

@@ -8,5 +8,45 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: aquamarine;
+  background-color: #202142;
+  color: #fff;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 768px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+input {
+  flex-grow: 2;
+}
+
+input:focus {
+  outline: none;
+}
+
+.num-display {
+  position: relative;
+  background: #f4f4f4;
 }

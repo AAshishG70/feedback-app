@@ -1,13 +1,14 @@
 import Feedback from "./Feedback";
+import Card from "./common/Card"
 
 const FeedbackList = ({ feedback }, { deleteFeedback }) => {
   // Validate feedback with PropTypes
   return (
-    <div>
-      {feedback.map((item) => (
+    <Card bgColor="green">
+      {feedback && typeOffeedback !== "string"? (feedback.map((item) => (
         <Feedback key={item.id} item={item} deleteFeedback={deleteFeedback} />
-      ))}
-    </div>
+      )))}
+    </Card>
   );
 };
 

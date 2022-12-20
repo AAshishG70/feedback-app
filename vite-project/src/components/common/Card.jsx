@@ -1,8 +1,7 @@
-import React from "react";
-import "./Card.module.css";
+import styles from "./Card.module.css";
 
-const Card = ({ children, bgColor = "red" }) => {
-  return <div style={{ backgroundColor: bgColor }}>{childern}</div>;
-};
+function Card({ children }) {
+  return <div className={styles.card}>{childern}</div>;
+}
 
 export default Card;
