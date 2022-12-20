@@ -1,7 +1,7 @@
-import styles from "./Card.module.css";
+import { CardWrapper } from "./Card.js";
 
 function Card({ children }) {
-  return <div className={styles.card}>{childern}</div>;
+  return <CardWrapper bgColor="pink">{childern}</CardWrapper>;
 }
 
 export default Card;
