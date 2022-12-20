@@ -1,35 +1,35 @@
 import { useState } from "react";
-// import Card from "./components/common/Card";
+import Card from "./components/common/Card";
+import Header from "./components/common/Header";
 import FeedbackForm from "./components/FeedbackForm";
-// import FeedbackRating from "./components/FeedbackRating";
-// import Header from "./components/common/Header";
 import FeedbackList from "./components/FeedbackList";
 import { feedbackData } from "./data/FeedbackData";
 import { v4 as uuidv4 } from "uuid";
+import FeedbackStats from "./components/FeedbackStats";
 
-const App = () => {
+function App() {
   const [feedback, setFeedback] = useState(feedbackData);
 
-  const deleteFeedback = (item) => {
-    if (window.confirm("Are you sure you want to delete this feedback?")) {
-      setFeedback(
-        feedback.filter((actualItem) => actualItem.id !== clickedItem.id)
-      );
+  function deleteFeedback(clickedId) {
+    // console.log(`You clicked on ${item.text} with id ${item.id}`);
+    if (window.confirm("Do you really want to delete this feedback?")) {
+      setFeedback(feedback.filter((actualItem) => actualItem.id !== clickedId));
     }
+  }
 
-    function addFeedback(newFeedback) {
-      newFeedback.id = uuidv4();
-      setFeedback([...feedback, newFeedback]);
-    }
+  function addFeedback(newFeedback) {
+    newFeedback.id = uuidv4();
+    setFeedback([...feedback, newFeedback]);
+  }
 
-    return (
-      <div className="container">
-        <Header text="Feedback App" />
-        <FeedbackForm addFeedback={addFeedback} />
-        <FeedbackList feedback={feedback} deleteFeedback={deleteFeedback} />
-      </div>
-    );
-  };
-};
+  return (
+    <div className="container">
+      <Header text="Feedback App" />
+      <FeedbackForm addFeedback={addFeedback} />
+      <FeedbackList feedback={feedback} deleteFeedback={deleteFeedback} />
+      <FeedbackStats feedback={feedback} />
+    </div>
+  );
+}
 
 export default App;

@@ -1,8 +1,10 @@
-/* Write CSS for the Feedback */
+/* Write css for Feedback component */
 
+/* Add some css for close button */
 .close {
+  /* position: absolute; */
   cursor: pointer;
-  /* position: absolute;
-  top: 12px;
-  right: 30px; */
+  /* top: 10px; */
+  /* right: 30px; */
+  border: none;
 }

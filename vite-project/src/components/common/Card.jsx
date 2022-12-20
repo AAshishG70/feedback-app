@@ -1,7 +1,9 @@
-import { CardWrapper } from "./Card.js";
+import { CardWrapper } from "../../styles/Card/Card";
 
-function Card({ children }) {
-  return <CardWrapper bgColor="pink">{childern}</CardWrapper>;
+function Card({ children, bgColor }) {
+  return (
+    <CardWrapper bgColor={bgColor ? bgColor : "pink"}>{children}</CardWrapper>
+  );
 }
 
 export default Card;

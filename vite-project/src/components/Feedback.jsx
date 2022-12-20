@@ -3,14 +3,14 @@ import Card from "./common/Card";
 import styles from "./Feedback.module.css";
 
 function Feedback({ item, deleteFeedback }) {
-  function handledelete() {
+  function handleDelete() {
     deleteFeedback(item.id);
   }
   return (
-    <Card>
-      <h1>{item.text}</h1>
+    <Card bgColor="white">
+      <h2>{item.text}</h2>
       <div className="num-display">{item.rating}</div>
-      <button onClick={handledelete} className="close">
+      <button onClick={handleDelete} className="close">
         <FaTimes color="purple" />
       </button>
     </Card>

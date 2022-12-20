@@ -1,4 +1,4 @@
 export const feedbackData = [
-  { text: "Universe is infinite", id: 1 },
-  { text: "Humanity won't last to uncover all the truth", id: 2 },
+  { text: "React is awesome", rating: 5, id: 1 },
+  { text: "This bootcamp is going great!", rating: 10, id: 2 },
 ];

@@ -1,51 +1,58 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import Card from "./common/Card";
+import Button from "./common/Button";
 import FeedbackRating from "./FeedbackRating";
 
-const FeedbackForm = () => {
+function FeedbackForm({ addFeedback }) {
   const [text, setText] = useState("");
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [rating, setRating] = useState(0);
 
-  const handleChange = (e) => {
+  console.log(text);
+
+  function handleChange(e) {
     if (text === "") {
-      setErrorMessage("Your text can't be empty!");
+      setErrorMessage(null);
       setIsDisabled(true);
     } else if (text !== "" && text.trim().length < 10) {
-      setErrorMessage("Text should be greater than 10 characters");
+      setErrorMessage("Your text should be greater then 10 characters");
       setIsDisabled(true);
     } else {
       setErrorMessage(null);
-      setIsDisabled(true);
+      setIsDisabled(false);
     }
-    setText(e.target.vaule);
+    setText(e.target.value);
+  }
 
-    function grabRating(inputRating) {
-      setRating(inputRating);
-    }
+  function grabRating(inputRating) {
+    setRating(inputRating);
+  }
 
-    function handleSubmit(e) {
-      e.preventDefault();
-    }
+  function handleSubmit(e) {
+    e.preventDefault();
 
     addFeedback({ text, rating });
-  };
+  }
 
   return (
     <Card>
-      <h3> Input your Feedback: </h3>
+      <h3>Input your feedback!</h3>
       <FeedbackRating grabRating={grabRating} />
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          onChange={handleChange}
-          placeholder="Enter your feedback!"
-          value={text}
-        />
-        <button disabled={isDisabled}>Submit</button>
+        <div className="input-group">
+          <input
+            type="text"
+            onChange={handleChange}
+            placeholder="Input your feedback!"
+            value={text}
+          />
+          <Button isDisabled={isDisabled}>Submit</Button>
+        </div>
       </form>
-      {errorMessage && <div style={{ style: "red" }}>{errorMessage}</div>}
+      {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
     </Card>
   );
-};
+}
 
 export default FeedbackForm;
